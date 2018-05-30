@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgxEchartsService } from 'ngx-echarts';
-import { CODE_HTML, CODE_JSON, CODE_TS } from './code';
+import { CODE_JSON } from './code';
+
+declare const require: any;
 
 @Component({
   selector: 'app-bus-line',
@@ -9,9 +11,9 @@ import { CODE_HTML, CODE_JSON, CODE_TS } from './code';
   styleUrls: ['./bus-line.component.scss']
 })
 export class BusLineComponent implements OnInit {
-  demo_html = CODE_HTML;
+  demo_html = require('!!html-loader!./bus-line.component.html');
+  demo_ts = require('!!raw-loader!./bus-line.component.ts');
   demo_json = CODE_JSON;
-  demo_ts = CODE_TS;
 
   // show loading spinner:
   mapLoaded = false;
@@ -25,10 +27,10 @@ export class BusLineComponent implements OnInit {
     this.http.get('assets/data/lines-bus.json')
       .subscribe((data: any[]) => {
         // processing data:
-        let hStep = 300 / (data.length - 1);
-        let busLines = [].concat.apply([], data.map((busLine, idx) => {
+        const hStep = 300 / (data.length - 1);
+        const busLines = [].concat.apply([], data.map((busLine, idx) => {
           let prevPt;
-          let points = [];
+          const points = [];
           for (let i = 0; i < busLine.length; i += 2) {
             let pt = [busLine[i], busLine[i + 1]];
             if (i > 0) {
