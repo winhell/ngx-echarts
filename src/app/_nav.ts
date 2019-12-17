@@ -31,21 +31,25 @@ export const navigation = [
       {
         name: 'Events',
         url: '/usage/events',
-        icon: 'fa fa-comment'
-      },
-      {
-        name: 'Theme',
-        url: '/usage/theme',
-        icon: 'fa fa-eyedropper'
-      },
-      {
-        name: 'Loading',
-        url: '/usage/loading',
-        icon: 'fa fa-spinner',
+        icon: 'fa fa-comment',
         badge: {
           variant: 'success',
           text: 'new'
         }
+      },
+      {
+        name: 'Theme',
+        url: '/usage/theme',
+        icon: 'fa fa-eyedropper',
+        badge: {
+          variant: 'success',
+          text: 'new'
+        }
+      },
+      {
+        name: 'Loading',
+        url: '/usage/loading',
+        icon: 'fa fa-spinner'
       },
       {
         name: 'Update Chart',
@@ -58,15 +62,36 @@ export const navigation = [
         icon: 'fa fa-cog'
       },
       {
-        name: 'NgxEchartsService',
-        url: '/usage/NgxEchartsService',
-        icon: 'fa fa-cogs'
+        name: 'Auto Resize',
+        url: '/usage/auto-resize',
+        icon: 'fa fa-cogs',
+        badge: {
+          variant: 'success',
+          text: 'new'
+        }
       },
     ]
   },
   {
     title: true,
     name: 'Advanced Demo'
+  },
+  {
+    name: 'Advanced',
+    url: '/demo/advanced',
+    icon: 'fa fa-sun-o',
+    children: [
+      {
+        name: 'Connect Charts',
+        url: '/demo/advanced/connect-charts',
+        icon: 'fa fa-star'
+      },
+      {
+        name: 'Draggable Chart',
+        url: '/demo/advanced/line-draggable',
+        icon: 'fa fa-star'
+      },
+    ]
   },
   {
     name: 'Map',
@@ -76,11 +101,6 @@ export const navigation = [
       {
         name: 'Population Density',
         url: '/demo/map/hongkong-pd',
-        icon: 'fa fa-star'
-      },
-      {
-        name: 'Bus Lines of Beijing',
-        url: '/demo/map/bus-lines-of-beijing',
         icon: 'fa fa-star'
       },
     ]
@@ -93,6 +113,35 @@ export const navigation = [
       {
         name: 'Official Demo',
         url: '/demo/tree/official-demo',
+        icon: 'fa fa-star'
+      }
+    ]
+  },
+  {
+    name: 'Graph',
+    url: '/demo/graph',
+    icon: 'fa fa-share-alt',
+    children: [
+      {
+        name: 'Simple Graph',
+        url: '/demo/graph/simple',
+        icon: 'fa fa-star'
+      },
+      {
+        name: 'Force Layout',
+        url: '/demo/graph/force-layout',
+        icon: 'fa fa-star'
+      }
+    ]
+  },
+  {
+    name: '3D Bar',
+    url: '/demo/bar3d',
+    icon: 'fa fa-bar-chart',
+    children: [
+      {
+        name: '3D Bar Demo',
+        url: '/demo/bar3d/bar3d-demo',
         icon: 'fa fa-star'
       }
     ]

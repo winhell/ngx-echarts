@@ -7,7 +7,7 @@ import { InitOptsComponent } from './init-opts/init-opts.component';
 import { LoadingComponent } from './loading/loading.component';
 import { EchartsInstanceComponent } from './echarts-instance/echarts-instance.component';
 import { EventsComponent } from './events/events.component';
-import { NgxEchartsServiceComponent } from './ngx-echarts-service/ngx-echarts-service.component';
+import { AutoResizeComponent } from './auto-resize/auto-resize.component';
 
 const routes: Routes = [
   {
@@ -60,10 +60,10 @@ const routes: Routes = [
     }
   },
   {
-    path: 'NgxEchartsService',
-    component: NgxEchartsServiceComponent,
+    path: 'auto-resize',
+    component: AutoResizeComponent,
     data: {
-      title: 'NgxEchartsService'
+      title: 'Auto Resize'
     }
   },
 ];

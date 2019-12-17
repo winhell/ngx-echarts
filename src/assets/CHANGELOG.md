@@ -1,3 +1,93 @@
+## 4.2.2 (2019-11-05)
+
+#### Bugfix
++ [issue #171](https://github.com/xieziyu/ngx-echarts/issues/171)
+
+## 4.2.1 (2019-06-17)
+
+#### Bugfix
++ [issue #197](https://github.com/xieziyu/ngx-echarts/issues/197)
+
+---
+
+## 4.2.0 (2019-06-14)
+
+#### New
++ Support ECharts custom build.
+
+---
+
+## 4.1.1 (2019-04-16)
+
+#### Bugfix
++ fix not call 'unsubscribe' when 'this.resizeSub' is undefined. (by [Tian-Hun](https://github.com/Tian-Hun) - [PR #165](https://github.com/xieziyu/ngx-echarts/pull/165))
+
+---
+
+## 4.1.0 (2018-12-16)
+
+#### New
++ Perfomance update: echarts events are now lazily bounded, so it won't trigger change dectection unexpectedly. Please refer to [PR #154](https://github.com/xieziyu/ngx-echarts/pull/154) for more details. Thanks to [smnbbrv](https://github.com/smnbbrv)!
++ Plenty of echarts event are now [supported](#events).
+
+#### Deprecated
++ `[detectEventChanges]` is now deprecated.
+
+---
+
+## 4.0.1 (2018-11-11)
+
+#### New
++ Add map events support: (chartMapSelectChanged), (chartMapSelected), (chartMapUnselected). (by [amirch1](https://github.com/amirch1) - [PR #147](https://github.com/xieziyu/ngx-echarts/pull/147))
+
+---
+
+## 4.0.0 (2018-08-20)
+
+#### BREAKING CHANGES
++ ES6 import instead of polluting global namespace. [issue #123](https://github.com/xieziyu/ngx-echarts/issues/123)
++ NgxEchartsService is now obsoleted. If you want to use echarts API, please just import it
+  ```typescript
+  import * as echarts from 'echarts';
+  /** or */
+  import { graphic, registerMap } from 'echarts';
+  ```
++ No need to configure `angular.json` any more. But we still need to configure `tsconfig.json` currently.
++ Import echarts theme files or other extension files in `main.ts`.
+
+#### New
++ [detectEventChanges] Use it to avoid unwanted change detections. Note that, if you set it false, `chartClick` and some other event-emitters become silent.
+
+#### Changes
++ ECharts instance creating is delayed until view initialized
++ [theme] now detect changes at runtime. Note that, when you change theme at runtime, the chart would be destroyed first and then initialized again.
+
+---
+
+## 3.2.0 & 2.3.0 (2018-07-24)
+
+#### New
++ [autoResize] now detects its container element's offset height. 
+
+#### Change
++ Resizing detection is now debounced.
+
+---
+
+## 3.1.0 & 2.2.0 (2018-06-13)
+
+#### New
++ [autoResize] now detects its container element's offset width. Especially useful for charts inside `<ng-template>` such as NG-ZORRO components.
+
+---
+
+## 3.0.1 & 2.1.1 (2018-06-12)
+
+#### Bugfix
++ Line chart is not animated on init.
+
+---
+
 ## 3.0.0 (2018-05-08)
 
 #### Changes
